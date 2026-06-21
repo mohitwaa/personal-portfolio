@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohit Kumar — Solutions Engineer · AI & Automation Consultant</title>
+<meta name="description" content="Independent AI & automation consulting. I help teams replace manual work with reliable automated systems. Book a free 1:1 consultation.">
+<meta name="theme-color" content="#0A2342">
+<meta name="author" content="Mohit Kumar">
+<link rel="canonical" href="https://mohitkumar.example/">
+<!-- Social / link-preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mohit Kumar — AI & Automation Consultant">
+<meta property="og:description" content="I help teams replace slow, error-prone manual work with reliable AI-powered automation — designed, built, and measured end to end. Book a free 1:1.">
+<meta property="og:url" content="https://mohitkumar.example/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mohit Kumar — AI & Automation Consultant">
+<meta name="twitter:description" content="Replace manual work with reliable AI-powered automation. Book a free 1:1 consultation.">
+<meta property="og:image" content="https://mohitkumar.example/og-preview.png">
+<meta name="twitter:image" content="https://mohitkumar.example/og-preview.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#FFFFFF;
+  --paper:#F7F9FB;
+  --ink:#0B1F35;
+  --navy:#0A2342;
+  --body:#46586E;
+  --blue:#1E56D6;
+  --blue-soft:#EAF0FE;
+  --rule:#E3E9F0;
+  --rule-strong:#CBD5E1;
+  --serif:'Source Serif 4',Georgia,serif;
+  --sans:'Inter',-apple-system,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:var(--sans);line-height:1.7;font-size:16px;overflow-x:hidden}
+a{color:inherit}
+::selection{background:var(--blue-soft)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
+.wrap{max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+section{padding:clamp(64px,9vw,104px) 0}
+.eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:16px}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1.22;color:var(--navy);margin-bottom:14px;letter-spacing:-.01em}
+.section-sub{color:var(--body);max-width:640px;font-size:1.02rem}
+.rule{border:none;border-top:1px solid var(--rule)}
+
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.nav-inner{max-width:1140px;margin:0 auto;padding:16px clamp(20px,5vw,48px);display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.18rem;color:var(--navy);text-decoration:none;letter-spacing:-.01em}
+.logo span{color:var(--blue)}
+.nav-links{display:flex;gap:30px;align-items:center;list-style:none}
+.nav-links a{text-decoration:none;font-size:.88rem;font-weight:500;color:var(--body);transition:color .2s}
+.nav-links a:hover{color:var(--navy)}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;cursor:pointer;
+  font-family:var(--sans);font-weight:600;font-size:.92rem;padding:12px 26px;border-radius:4px;
+  transition:background .2s,transform .15s,box-shadow .2s;border:1px solid transparent}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 2px 10px rgba(30,86,214,.22)}
+.btn-primary:hover{background:var(--navy);transform:translateY(-1px);box-shadow:0 10px 24px rgba(10,35,66,.25)}
+.btn:active{transform:translateY(0) scale(.985);transition-duration:.06s}
+
+.btn-outline{border-color:var(--rule-strong);color:var(--navy);background:#fff}
+.btn-outline:hover{border-color:var(--navy)}
+.btn-sm{padding:9px 18px;font-size:.84rem}
+.menu-toggle{display:none;background:none;border:1px solid var(--rule-strong);color:var(--navy);padding:7px 13px;border-radius:4px;font-size:.82rem;font-weight:600;cursor:pointer}
+
+/* ---------- hero ---------- */
+.hero{padding-top:clamp(130px,16vw,176px);padding-bottom:clamp(56px,7vw,88px)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(36px,5vw,72px);align-items:center}
+.hero-kicker{font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--body);
+  display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.hero-kicker::before{content:"";width:34px;height:1px;background:var(--blue)}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.2rem,4.8vw,3.4rem);line-height:1.14;letter-spacing:-.015em;color:var(--navy);margin-bottom:22px}
+h1 em{font-style:italic;color:var(--blue)}
+.hero-sub{color:var(--body);font-size:clamp(1rem,1.4vw,1.13rem);max-width:540px;margin-bottom:34px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero-note{margin-top:18px;font-size:.82rem;color:var(--body)}
+.hero-note b{color:var(--navy);font-weight:600}
+
+/* hero schematic */
+.schematic{border:1px solid var(--rule);border-radius:8px;background:#fff;padding:26px;box-shadow:0 18px 48px rgba(10,35,66,.07)}
+.schematic-title{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.schematic-title .t{font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--navy)}
+.schematic-title .s{font-size:.7rem;color:var(--body)}
+.schematic svg{width:100%;height:auto}
+.fl-pill-t{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;fill:#fff;letter-spacing:-.01em}
+.fl-pill-s{font-family:'Inter',sans-serif;font-size:8.5px;font-weight:700;fill:#9DB8E0;letter-spacing:.12em}
+.fl-title{font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;fill:#0B1F35;letter-spacing:-.01em}
+.fl-sub{font-family:'Inter',sans-serif;font-size:9.8px;font-weight:500;fill:#5B6B80}
+.fl-ai-t{font-family:'Inter',sans-serif;font-size:14px;font-weight:700;fill:#fff;letter-spacing:-.01em}
+.fl-ai-s{font-family:'Inter',sans-serif;font-size:9.8px;font-weight:500;fill:#CFE0FF}
+.fl-chip-t{font-family:'Inter',sans-serif;font-size:8.5px;font-weight:700;fill:#fff;letter-spacing:.14em}
+.fl-branch{font-family:'Inter',sans-serif;font-size:9px;font-weight:700;letter-spacing:.08em}
+.fl-card-t{font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:-.01em}
+.fl-card-s{font-family:'Inter',sans-serif;font-size:9.2px;font-weight:500;fill:#5B6B80}
+.fl-rlbl{font-family:'Inter',sans-serif;font-size:8px;font-weight:700;fill:#9DB8E0;letter-spacing:.16em}
+.fl-rtitle{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#fff}
+.fl-metric{font-family:'Inter',sans-serif;font-size:10.5px;font-weight:700}
+.fl-loop-t{font-family:'Inter',sans-serif;font-size:7.6px;font-weight:700;fill:#B45309;letter-spacing:.12em}
+.svc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.svc .icon{width:42px;height:42px;border-radius:8px;background:var(--blue-soft);color:var(--blue);display:flex;align-items:center;justify-content:center}
+.svc-top .no{margin-bottom:0}
+.schematic-foot{margin-top:14px;padding-top:14px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-size:.74rem;color:var(--body)}
+.schematic-foot b{color:var(--navy)}
+
+/* ---------- impact band (signature) ---------- */
+.impact{background:var(--navy);color:#fff;padding:clamp(48px,6vw,72px) 0}
+.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,40px)}
+.impact .item{border-left:1px solid rgba(255,255,255,.18);padding-left:22px}
+.impact .num{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,3.4vw,2.6rem);line-height:1.1}
+.impact .lbl{font-size:.78rem;color:#AEC1DB;margin-top:8px;letter-spacing:.04em}
+.impact-cap{margin-top:34px;font-size:.78rem;color:#8FA6C4;border-top:1px solid rgba(255,255,255,.12);padding-top:18px}
+
+/* ---------- services ---------- */
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);margin-top:48px;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.svc{padding:36px 32px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);transition:background .2s}
+.svc:hover{background:var(--paper)}
+.svc .no{font-size:.72rem;font-weight:600;letter-spacing:.14em;color:var(--blue);margin-bottom:14px}
+.svc h3{font-family:var(--serif);font-weight:600;font-size:1.22rem;color:var(--navy);margin-bottom:10px}
+.svc p{color:var(--body);font-size:.94rem}
+.svc .tools{margin-top:16px;font-size:.76rem;color:var(--body)}
+.svc .tools b{color:var(--navy);font-weight:600}
+
+/* ---------- featured agentic project ---------- */
+.featured{background:var(--paper);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.feat-card{background:#fff;border:1px solid var(--rule);border-radius:8px;margin-top:44px;
+  display:grid;grid-template-columns:1.1fr .9fr;overflow:hidden;box-shadow:0 18px 48px rgba(10,35,66,.06)}
+.feat-main{padding:clamp(28px,4vw,48px)}
+.feat-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.badge{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:99px}
+.badge-blue{background:var(--blue-soft);color:var(--blue)}
+.badge-line{border:1px solid var(--rule-strong);color:var(--body)}
+.feat-main h3{font-family:var(--serif);font-weight:600;font-size:clamp(1.4rem,2.4vw,1.8rem);color:var(--navy);line-height:1.25;margin-bottom:14px}
+.feat-main p{color:var(--body);font-size:.96rem;margin-bottom:14px}
+.feat-main p b{color:var(--navy);font-weight:600}
+.feat-side{background:var(--navy);color:#fff;padding:clamp(28px,4vw,44px);display:flex;flex-direction:column;justify-content:center;gap:22px}
+.feat-side .k{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8FA6C4;margin-bottom:6px}
+.feat-side .v{font-size:.92rem;line-height:1.55}
+.feat-side .org{font-size:.85rem;line-height:1.9;border-left:2px solid var(--blue);padding-left:16px;font-family:var(--serif)}
+
+/* ---------- case studies ---------- */
+.case-list{margin-top:48px;border-top:1px solid var(--rule)}
+.case{display:grid;grid-template-columns:200px 1fr;gap:clamp(20px,4vw,56px);padding:34px 0;border-bottom:1px solid var(--rule);transition:background .2s}
+.case:hover{background:var(--paper)}
+.case .metric{font-family:var(--serif);font-weight:600;font-size:2rem;color:var(--navy);line-height:1.1}
+.case .metric small{display:block;font-family:var(--sans);font-weight:500;font-size:.72rem;color:var(--body);letter-spacing:.06em;text-transform:uppercase;margin-top:8px}
+.case h3{font-family:var(--serif);font-weight:600;font-size:1.18rem;color:var(--navy);margin-bottom:8px}
+.case p{color:var(--body);font-size:.94rem;max-width:680px}
+.case .stack{margin-top:12px;font-size:.76rem;color:var(--body)}
+.case .stack b{color:var(--navy);font-weight:600}
+
+/* ---------- process ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.step{padding:36px 32px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.step .n{font-family:var(--serif);font-size:2.4rem;font-weight:600;color:var(--rule-strong);line-height:1;margin-bottom:18px}
+.step h3{font-family:var(--serif);font-weight:600;font-size:1.15rem;color:var(--navy);margin-bottom:10px}
+.step p{color:var(--body);font-size:.93rem}
+
+/* ---------- about ---------- */
+.about-text p{color:var(--body);margin-bottom:16px;font-size:.98rem}
+.about-text p b{color:var(--navy);font-weight:600}
+.pull{font-family:var(--serif);font-size:1.25rem;font-style:italic;color:var(--navy);border-left:2px solid var(--blue);padding-left:20px;margin:24px 0;line-height:1.5}
+.journey{margin-top:30px;border-top:1px solid var(--rule)}
+.j-row{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:14px 0;border-bottom:1px solid var(--rule);font-size:.9rem}
+.j-row .when{color:var(--body);font-size:.8rem;font-weight:600;letter-spacing:.04em;padding-top:2px}
+.j-row .what b{color:var(--navy);font-weight:600;display:block}
+.j-row .what span{color:var(--body);font-size:.86rem}
+
+/* ---------- CTA ---------- */
+.cta{background:var(--paper);border-top:1px solid var(--rule)}
+.cta-box{text-align:center;max-width:660px;margin:0 auto}
+.cta-box p{color:var(--body);margin:14px auto 32px;max-width:520px}
+.btn-lg{padding:15px 36px;font-size:1rem}
+.cta-meta{margin-top:16px;font-size:.8rem;color:var(--body);letter-spacing:.02em}
+
+/* ---------- footer ---------- */
+footer{padding:48px 0;border-top:1px solid var(--rule);font-size:.88rem;color:var(--body)}
+.foot-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot-links{display:flex;gap:24px;list-style:none;flex-wrap:wrap}
+.foot-links a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-weight:500;transition:color .2s}
+.foot-links a svg{flex-shrink:0}
+.foot-links a:hover{color:var(--blue)}
+.disclaimer{margin-top:28px;padding-top:18px;border-top:1px solid var(--rule);font-size:.76rem;color:#8896A8}
+
+/* ---------- automation tabs ---------- */
+.tab-nav{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--rule);border-radius:10px 10px 0 0;overflow:hidden;margin-top:44px}
+.tab-btn{padding:20px 20px 18px;background:var(--paper);border:none;border-right:1px solid var(--rule);cursor:pointer;text-align:left;font-family:inherit;transition:background .18s;position:relative}
+.tab-btn:last-child{border-right:none}
+.tab-btn::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:transparent;transition:background .18s}
+.tab-btn.active{background:#fff}
+.tab-btn.active::after{background:var(--blue)}
+.tab-btn:hover:not(.active){background:#EFF3F8}
+.t-num{font-size:.64rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--body);margin-bottom:7px;transition:color .18s}
+.tab-btn.active .t-num{color:var(--blue)}
+.t-title{font-family:var(--serif);font-size:.9rem;font-weight:600;color:var(--navy);line-height:1.35;margin-bottom:16px}
+.t-metric{font-family:var(--serif);font-weight:600;font-size:1.18rem;color:var(--navy);line-height:1.1}
+.t-metric small{font-family:var(--sans);font-size:.58rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--body);display:block;margin-top:3px}
+.tab-panels{border:1px solid var(--rule);border-top:none;border-radius:0 0 10px 10px;background:#fff}
+.tab-panel{display:none}
+.tab-panel.active{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(28px,4vw,56px);padding:clamp(28px,4vw,48px);align-items:center;animation:tpFade .22s ease}
+@keyframes tpFade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.tp-eyebrow{font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.tp-eyebrow::before{content:'';width:18px;height:1px;background:var(--blue)}
+.tp-h3{font-family:var(--serif);font-weight:600;font-size:1.14rem;color:var(--navy);line-height:1.32;margin-bottom:14px}
+.tp-desc{color:var(--body);font-size:.93rem;line-height:1.72;margin-bottom:16px}
+.tp-desc b{color:var(--navy);font-weight:600}
+.tp-stack{font-size:.74rem;color:var(--body);border-top:1px solid var(--rule);padding-top:14px}
+.tp-stack b{color:var(--navy);font-weight:600}
+
+/* vertical flow */
+@keyframes vDot{0%{top:-8px;opacity:0}10%{opacity:1}88%{opacity:1}100%{top:calc(100% + 8px);opacity:0}}
+.vflow{display:flex;flex-direction:column}
+.vf-node{display:flex;align-items:center;gap:14px;background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:12px 16px}
+.vf-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(10,35,66,.11)}
+.vf-node.trigger .vf-icon{background:var(--navy)}
+.vf-node.auto .vf-icon{background:linear-gradient(135deg,#2C68E0,#0A2342)}
+.vf-node.result .vf-icon{background:#16A34A}
+.vf-label{font-size:.82rem;font-weight:700;color:var(--navy);letter-spacing:-.01em}
+.vf-sub{font-size:.68rem;color:var(--body);margin-top:2px}
+.vf-conn{height:26px;position:relative;margin-left:36px}
+.vf-conn::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--rule)}
+.vf-dot{position:absolute;left:-3.5px;width:9px;height:9px;border-radius:50%;background:var(--blue);box-shadow:0 0 7px rgba(30,86,214,.5);animation:vDot 1.9s ease-in-out infinite}
+.vflow>:nth-child(2) .vf-dot{animation-delay:0s}
+.vflow>:nth-child(4) .vf-dot{animation-delay:.38s}
+.vflow>:nth-child(6) .vf-dot{animation-delay:.76s}
+.vflow>:nth-child(8) .vf-dot{animation-delay:1.14s}
+
+@media(max-width:960px){.tab-panel.active{grid-template-columns:1fr}.t-metric{font-size:1rem}}
+@media(max-width:760px){.tab-nav{display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px 10px 0 0}.tab-btn{flex-shrink:0;min-width:150px}}
+@media(max-width:560px){.t-title{font-size:.82rem}.t-metric{font-size:.9rem}.tab-btn{padding:14px 14px 12px;min-width:130px}}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr}
+  .impact-grid{grid-template-columns:repeat(2,1fr);row-gap:32px}
+  .feat-card{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .wrap{padding:0 18px}
+  .schematic{padding:18px 14px}
+  .impact .item{padding-left:14px}
+  .j-row{grid-template-columns:1fr;gap:2px;padding:12px 0}
+  .feat-main,.feat-side{padding:24px 20px}
+  .case .metric{font-size:1.7rem}
+  .svc{padding:28px 22px}
+  .step{padding:28px 22px}
+  .btn-lg{width:100%;justify-content:center}
+  .hero-ctas .btn{flex:1;justify-content:center}
+}
+@media(max-width:760px){
+  .nav-links{position:fixed;top:60px;left:0;right:0;flex-direction:column;background:#fff;
+    padding:24px;border-bottom:1px solid var(--rule);display:none;gap:18px}
+  .nav-links.open{display:flex}
+  .menu-toggle{display:block}
+  .case{grid-template-columns:1fr;gap:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#top">Mohit Kumar<span>.</span></a>
+    <button class="menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
+    <ul class="nav-links">
+      <li><a href="#services">Expertise</a></li>
+      <li><a href="#automation">Automation</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a class="btn btn-primary btn-sm" href="https://calendly.com/mohitkr/1-1" target="_blank" rel="noopener">Book a free 1:1</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="reveal in">
+      <div class="hero-kicker">Solutions Engineer · AI &amp; Automation Consultant</div>
+      <h1>Manual work is the most expensive thing your business pays for. <em>I remove it.</em></h1>
+      <p class="hero-sub">I help founders, marketers, and operations teams replace slow, error-prone manual processes with reliable AI-powered automation — designed, built, and measured end to end.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://calendly.com/mohitkr/1-1" target="_blank" rel="noopener">Book a free 1:1 consultation</a>
+        <a class="btn btn-outline" href="#results">View results</a>
+      </div>
+      <p class="hero-note"><b>30 minutes, no obligation.</b> Bring your messiest process — leave with a clear automation roadmap.</p>
+    </div>
+
+    <div class="schematic reveal">
+      <div class="schematic-title">
+        <span class="t">The automated pipeline</span>
+        <span class="s">New lead → AI decision → revenue</span>
+      </div>
+      <svg viewBox="0 0 440 466" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Automated lead pipeline: a new lead arrives, is cleaned and synced to the CRM, then an AI step qualifies it. Qualified leads are routed to sales (green); the rest enter an automated nurture loop (amber) that re-scores them. Everything ends in measured outcomes: 10 to 15 percent more revenue and 25 percent more form completions.">
+        <defs>
+          <marker id="ah-slate" markerWidth="9" markerHeight="9" refX="5.4" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#94A3B8"/></marker>
+          <marker id="ah-green" markerWidth="9" markerHeight="9" refX="5.4" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#16A34A"/></marker>
+          <marker id="ah-amber" markerWidth="9" markerHeight="9" refX="5.4" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#D97706"/></marker>
+          <linearGradient id="aiGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#2C68E0"/>
+            <stop offset="1" stop-color="#0A2342"/>
+          </linearGradient>
+          <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="160%">
+            <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0A2342" flood-opacity="0.12"/>
+          </filter>
+          <filter id="aiGlow" x="-30%" y="-30%" width="160%" height="180%">
+            <feDropShadow dx="0" dy="6" stdDeviation="11" flood-color="#1E56D6" flood-opacity="0.34"/>
+          </filter>
+        </defs>
+
+        <!-- STAGE 1 · trigger -->
+        <rect x="70" y="18" width="300" height="48" rx="24" fill="#0A2342" filter="url(#cardShadow)"/>
+        <circle cx="100" cy="42" r="15" fill="rgba(255,255,255,.12)"/>
+        <svg x="90" y="32" width="20" height="20" viewBox="0 0 24 24" fill="#BFD4FF" stroke="none"><path d="M13 2 L4.5 13.5 H11 L9 22 L19.5 10 H13 Z"/></svg>
+        <text class="fl-pill-t" x="126" y="38">New lead arrives</text>
+        <text class="fl-pill-s" x="126" y="52">FORM · AD · CAMPAIGN</text>
+        <path d="M220 66 V86" fill="none" stroke="#94A3B8" stroke-width="2.2" marker-end="url(#ah-slate)"/>
+
+        <!-- STAGE 2 · clean & sync -->
+        <rect x="70" y="88" width="300" height="58" rx="12" fill="#fff" stroke="#E3E9F0" stroke-width="1.4" filter="url(#cardShadow)"/>
+        <rect x="86" y="102" width="34" height="34" rx="9" fill="#EAF0FE"/>
+        <svg x="92" y="108" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E56D6" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg>
+        <text class="fl-title" x="132" y="113">Clean &amp; sync to CRM</text>
+        <text class="fl-sub" x="132" y="129">De-dupe · enrich · log</text>
+        <path d="M220 146 V166" fill="none" stroke="#94A3B8" stroke-width="2.2" marker-end="url(#ah-slate)"/>
+
+        <!-- STAGE 3 · AI (the centerpiece) -->
+        <rect x="64" y="168" width="312" height="66" rx="16" fill="url(#aiGrad)" filter="url(#aiGlow)"/>
+        <circle cx="100" cy="201" r="19" fill="rgba(255,255,255,.15)"/>
+        <svg x="89" y="190" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.94 14.06A2 2 0 0 0 8.5 12.62l-5.62-1.45a.5.5 0 0 1 0-.96L8.5 8.76a2 2 0 0 0 1.44-1.44l1.45-5.62a.5.5 0 0 1 .96 0l1.45 5.62a2 2 0 0 0 1.44 1.44l5.62 1.45a.5.5 0 0 1 0 .96l-5.62 1.45a2 2 0 0 0-1.44 1.44l-1.45 5.62a.5.5 0 0 1-.96 0Z"/><path d="M20 2v4"/><path d="M22 4h-4"/></svg>
+        <rect x="322" y="178" width="36" height="17" rx="8.5" fill="rgba(255,255,255,.18)"/>
+        <text class="fl-chip-t" x="340" y="190" text-anchor="middle">AI</text>
+        <text class="fl-ai-t" x="132" y="197">AI qualifies the lead</text>
+        <text class="fl-ai-s" x="132" y="214">Scores real buying intent</text>
+
+        <!-- branch split -->
+        <path d="M220 234 V252 M120 252 H320" fill="none" stroke="#94A3B8" stroke-width="2.2"/>
+        <path d="M120 252 V274" fill="none" stroke="#16A34A" stroke-width="2.2" marker-end="url(#ah-green)"/>
+        <path d="M320 252 V274" fill="none" stroke="#D97706" stroke-width="2.2" marker-end="url(#ah-amber)"/>
+        <text class="fl-branch" x="120" y="248" text-anchor="middle" fill="#15803D">âœ“ QUALIFIED</text>
+        <text class="fl-branch" x="320" y="248" text-anchor="middle" fill="#B45309">↻ NOT YET</text>
+
+        <!-- LEFT · route to sales (win) -->
+        <rect x="34" y="276" width="180" height="74" rx="13" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.4" filter="url(#cardShadow)"/>
+        <rect x="48" y="292" width="32" height="32" rx="9" fill="#16A34A"/>
+        <svg x="54" y="298" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9 22 2Z"/></svg>
+        <text class="fl-card-t" x="90" y="305" fill="#14532D">Route to sales</text>
+        <text class="fl-card-s" x="90" y="321">WhatsApp + CRM alert</text>
+
+        <!-- RIGHT · nurture (loop) -->
+        <rect x="226" y="276" width="180" height="74" rx="13" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.4" filter="url(#cardShadow)"/>
+        <rect x="240" y="292" width="32" height="32" rx="9" fill="#D97706"/>
+        <svg x="246" y="298" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+        <text class="fl-card-t" x="282" y="305" fill="#7C2D12">Nurture &amp; re-engage</text>
+        <text class="fl-card-s" x="282" y="321">Automated follow-ups</text>
+
+        <!-- nurture loop back into AI -->
+        <path d="M404 286 C 430 280 430 201 380 201" fill="none" stroke="#D97706" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#ah-amber)"/>
+
+        <!-- merge into result -->
+        <path d="M124 350 V366 M316 350 V366 M124 366 H316" fill="none" stroke="#94A3B8" stroke-width="2.2"/>
+        <path d="M220 366 V382" fill="none" stroke="#94A3B8" stroke-width="2.2" marker-end="url(#ah-slate)"/>
+
+        <!-- RESULT band -->
+        <rect x="34" y="384" width="372" height="64" rx="16" fill="#0A2342" filter="url(#cardShadow)"/>
+        <rect x="50" y="400" width="32" height="32" rx="9" fill="rgba(255,255,255,.1)"/>
+        <svg x="56" y="406" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6EE7B7" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+        <text class="fl-rlbl" x="92" y="406">MEASURED OUTCOME</text>
+        <text class="fl-rtitle" x="92" y="424">Revenue you can prove</text>
+        <rect x="250" y="394" width="142" height="22" rx="11" fill="rgba(34,197,94,.18)"/>
+        <text class="fl-metric" x="321" y="409" text-anchor="middle" fill="#86EFAC">+10–15% revenue</text>
+        <rect x="250" y="420" width="142" height="20" rx="10" fill="rgba(255,255,255,.1)"/>
+        <text class="fl-metric" x="321" y="434" text-anchor="middle" fill="#fff">+25% completions</text>
+      </svg>
+      <div class="schematic-foot">
+        <span>Edge cases, retries &amp; error alerts by default</span>
+        <span><b>QA-grade reliability</b></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ IMPACT BAND (signature) ============ -->
+<div class="impact">
+  <div class="wrap">
+    <div class="impact-grid">
+      <div class="item reveal"><div class="num" data-count="5" data-suffix="+">0</div><div class="lbl">Years across technical roles</div></div>
+      <div class="item reveal"><div class="num" data-count="25" data-suffix="%+">0</div><div class="lbl">Lift in funnel conversions</div></div>
+      <div class="item reveal"><div class="num" data-count="100" data-suffix="%">0</div><div class="lbl">Payout accuracy on automated systems</div></div>
+      <div class="item reveal"><div class="num" data-count="15" data-prefix="~" data-suffix="h">0</div><div class="lbl">Team hours saved per month</div></div>
+    </div>
+    <p class="impact-cap">Outcomes from production AI &amp; automation systems I've designed and shipped in B2B SaaS.</p>
+  </div>
+</div>
+
+<!-- ============ EXPERTISE ============ -->
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow reveal">Expertise</div>
+    <h2 class="reveal">Where I create measurable value</h2>
+    <p class="section-sub reveal">If your team is copying data between tools, chasing leads by hand, or answering the same questions daily — that is precisely the work I remove.</p>
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <div class="svc-top">
+          <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="18" r="2.4"/><circle cx="19" cy="18" r="2.4"/><path d="M12 7.4v4.1M10.4 13.6L6.4 16M13.6 13.6l4 2.4M12 11.5a1.6 1.6 0 100 .01"/></svg></div>
+          <div class="no">01</div>
+        </div>
+        <h3>Agentic &amp; AI-powered workflows</h3>
+        <p>Multi-agent systems, GPT assistants that resolve repetitive questions instantly, and AI call agents that qualify leads before your sales team ever picks up the phone.</p>
+        <div class="tools"><b>Stack:</b> Claude / GPT APIs · PaperClip · n8n · AI voice agents</div>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-top">
+          <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 12a8 8 0 10-2.3 5.6"/><path d="M20 8v4h-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.2"/></svg></div>
+          <div class="no">02</div>
+        </div>
+        <h3>Business process automation</h3>
+        <p>End-to-end automations replacing manual, error-prone work — lead routing, payouts, follow-ups, reporting — engineered to run reliably without supervision.</p>
+        <div class="tools"><b>Stack:</b> n8n · Zapier · Pabbly Connect · Google Apps Script</div>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-top">
+          <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M9.5 14.5l5-5"/><path d="M11 7l1.8-1.8a3.4 3.4 0 014.8 4.8L15.8 11.8"/><path d="M13 17l-1.8 1.8a3.4 3.4 0 01-4.8-4.8L8.2 12.2"/></svg></div>
+          <div class="no">03</div>
+        </div>
+        <h3>CRM &amp; API integrations</h3>
+        <p>Connecting the systems you already use — CRMs, WhatsApp, payments, spreadsheets — so data flows automatically and nothing falls through the cracks.</p>
+        <div class="tools"><b>Stack:</b> Node.js · REST APIs · Webhooks · WhatsApp Business API</div>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-top">
+          <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M3 20h18M6.5 16v-5.5M11.5 16V6.5M16.5 16v-8"/><circle cx="16.5" cy="5" r="1.4"/></svg></div>
+          <div class="no">04</div>
+        </div>
+        <h3>Marketing &amp; funnel analytics</h3>
+        <p>GA4 and Google Tag Manager instrumentation that exposes exactly where leads drop out of your funnel — and ties advertising spend to actual revenue.</p>
+        <div class="tools"><b>Stack:</b> GA4 · Google Tag Manager · DataLayer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AUTOMATION ============ -->
+<section id="automation" class="featured">
+  <div class="wrap">
+    <div class="eyebrow reveal">What I Build</div>
+    <h2 class="reveal">Real automations. Measured outcomes.</h2>
+    <p class="section-sub reveal">Every workflow below replaced hours of manual work with a reliable system. Select one to see exactly how it works.</p>
+    <div class="reveal">
+      <div class="tab-nav" role="tablist">
+        <button class="tab-btn active" data-tab="t1" role="tab" aria-selected="true">
+          <div class="t-num">01</div>
+          <div class="t-title">Lead recovery &amp; qualification</div>
+          <div class="t-metric">+10–15%<small>Revenue lift</small></div>
+        </button>
+        <button class="tab-btn" data-tab="t2" role="tab" aria-selected="false">
+          <div class="t-num">02</div>
+          <div class="t-title">Funnel drop-off analytics</div>
+          <div class="t-metric">+25%<small>Form completions</small></div>
+        </button>
+        <button class="tab-btn" data-tab="t3" role="tab" aria-selected="false">
+          <div class="t-num">03</div>
+          <div class="t-title">Affiliate program automation</div>
+          <div class="t-metric">100%<small>Payout accuracy</small></div>
+        </button>
+        <button class="tab-btn" data-tab="t4" role="tab" aria-selected="false">
+          <div class="t-num">04</div>
+          <div class="t-title">Internal support bot</div>
+          <div class="t-metric">−25%<small>Resolution time</small></div>
+        </button>
+        <button class="tab-btn" data-tab="t5" role="tab" aria-selected="false">
+          <div class="t-num">05</div>
+          <div class="t-title">Enterprise data migration</div>
+          <div class="t-metric">4,000+<small>Accounts moved overnight</small></div>
+        </button>
+      </div>
+      <div class="tab-panels">
+
+        <!-- PANEL 1 -->
+        <div class="tab-panel active" id="t1" role="tabpanel">
+          <div>
+            <div class="tp-eyebrow">Lead recovery</div>
+            <h3 class="tp-h3">Leads were abandoning the form and disappearing — silently</h3>
+            <p class="tp-desc">A multi-step demo form was losing leads at every step with no way to recover them. An automated flow now detects the drop the moment it happens, re-engages via <b>WhatsApp drip campaigns</b>, and routes only sales-ready leads to the team — pre-qualified by an AI call agent before anyone picks up the phone.</p>
+            <div class="tp-stack"><b>Stack:</b> CRM APIs · AI call agent · WhatsApp Business API · webhooks</div>
+          </div>
+          <div class="vflow">
+            <div class="vf-node trigger">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+              <div><div class="vf-label">Lead drops off</div><div class="vf-sub">Form abandoned mid-way</div></div>
+            </div>
+            <div class="vf-conn"><div class="vf-dot"></div></div>
+            <div class="vf-node auto">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BFD4FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+              <div><div class="vf-label">Drop detected</div><div class="vf-sub">Trigger fires instantly</div></div>
+            </div>
+            <div class="vf-conn"><div class="vf-dot"></div></div>
+            <div class="vf-node auto">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BFD4FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+              <div><div class="vf-label">WhatsApp drip</div><div class="vf-sub">Auto follow-up sequence</div></div>
+            </div>
+            <div class="vf-conn"><div class="vf-dot"></div></div>
+            <div class="vf-node auto">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BFD4FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+              <div><div class="vf-label">AI call agent</div><div class="vf-sub">Qualifies buying intent</div></div>
+            </div>
+            <div class="vf-conn"><div class="vf-dot"></div></div>
+            <div class="vf-node result">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9 22 2Z"/></svg></div>
+              <div><div class="vf-label">Sales alerted</div><div class="vf-sub">Only ready leads passed through</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL 2 -->
+        <div class="tab-panel" id="t2" role="tabpanel">
+          <div>
+            <div class="tp-eyebrow">Funnel analytics</div>
+            <h3 class="tp-h3">Nobody knew where customers were dropping off — or why</h3>
+            <p class="tp-desc">A multi-step demo form was losing conversions at every step but the team had no visibility into where or why. Instrumented it with <b>GA4 and Google Tag Manager</b> to expose per-step drop-off. Found the single field killing conversions, made it optional, and built automatic retargeting audiences from abandoners — recovering 10% of lost leads immediately.</p>
+            <div class="tp-stack"><b>Stack:</b> GA4 · Google Tag Manager · DataLayer · JavaScript</div>
+          </div>
+          <div class="vflow">
+            <div class="vf-node trigger">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+              <div><div class="vf-label">User visits form</div><div class="vf-sub">Session begins</div></div>
+            </div>
+            <div class="vf-conn"><div class="vf-dot"></div></div>
+            <div class="vf-node auto">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BFD4FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div>
+              <div><div class="vf-label">Every step tracked</div><div class="vf-sub">DataLayer events fire per field</div></div>
+            </div>
+            <div class="vf-conn"><div class="vf-dot"></div></div>
+            <div class="vf-node auto">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BFD4FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+              <div><div class="vf-label">Drop detected</div><div class="vf-sub">Exact leaky step exposed</div></div>
+            </div>
+            <div class="vf-conn"><div class="vf-dot"></div></div>
+            <div class="vf-node auto">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BFD4FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+              <div><div class="vf-label">Retargeting fires</div><div class="vf-sub">Audience built automatically</div></div>
+            </div>
+            <div class="vf-conn"><div class="vf-dot"></div></div>
+            <div class="vf-node result">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+              <div><div class="vf-label">Lead recovered</div><div class="vf-sub">+10% of lost leads won back</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL 3 -->
+        <div class="tab-panel" id="t3" role="tabpanel">
+          <div>
+            <div class="tp-eyebrow">Affiliate automation</div>
+            <h3 class="tp-h3">Manual affiliate tracking meant duplicate payouts and zero audit trail</h3>
+            <p class="tp-desc">The existing process was manual, error-prone and impossible to audit. Built a secure end-to-end system where partners sign up, get verified, and receive a <b>unique dynamic payment link</b> automatically. Every referral is attributed, every payout calculated, every transaction logged — no human steps in between.</p>
+            <div class="tp-stack"><b>Stack:</b> Node.js · Payment-link APIs · CRM logic · webhooks</div>
+          </div>
+          <div class="vflow">
+            <div class="vf-node trigger">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></div>
+              <div><div class="vf-label">Partner applies</div><div class="vf-sub">Application received</div></div>
+            </div>
+            <div class="vf-conn"><div class="vf-dot"></div></div>
+            <div class="vf-node auto">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BFD4FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <div><div class="vf-label">Auto-verified</div><div class="vf-sub">Unique tracking link generated</div></div>
+            </div>
+            <div class="vf-conn"><div class="vf-dot"></div></div>
+            <div class="vf-node auto">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BFD4FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+              <div><div class="vf-label">Referral tracked</div><div class="vf-sub">Attribution logged on conversion</div></div>
+            </div>
+            <div class="vf-conn"><div class="vf-dot"></div></div>
+            <div class="vf-node auto">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BFD4FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+              <div><div class="vf-label">Payout calculated</div><div class="vf-sub">Zero duplicates, zero errors</div></div>
+            </div>
+            <div class="vf-conn"><div class="vf-dot"></div></div>
+            <div class="vf-node result">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+              <div><div class="vf-label">Payment sent</div><div class="vf-sub">Full audit trail, every time</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL 4 -->
+        <div class="tab-panel" id="t4" role="tabpanel">
+          <div>
+            <div class="tp-eyebrow">Support automation</div>
+            <h3 class="tp-h3">Senior staff were spending hours answering the same questions every day</h3>
+            <p class="tp-desc">Repetitive internal questions — product how-tos, process queries, policy lookups — were eating senior staff time daily. Built a GPT bot connected to a <b>searchable internal knowledge base</b> that resolves these instantly. Adopted organisation-wide, it eliminated the daily interruption loop entirely.</p>
+            <div class="tp-stack"><b>Stack:</b> GPT API · Node.js · knowledge base integration</div>
+          </div>
+          <div class="vflow">
+            <div class="vf-node trigger">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+              <div><div class="vf-label">Question asked</div><div class="vf-sub">Any team member, any time</div></div>
+            </div>
+            <div class="vf-conn"><div class="vf-dot"></div></div>
+            <div class="vf-node auto">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BFD4FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+              <div><div class="vf-label">Knowledge base searched</div><div class="vf-sub">Entire doc library scanned</div></div>
+            </div>
+            <div class="vf-conn"><div class="vf-dot"></div></div>
+            <div class="vf-node auto">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BFD4FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.94 14.06A2 2 0 0 0 8.5 12.62l-5.62-1.45a.5.5 0 0 1 0-.96L8.5 8.76a2 2 0 0 0 1.44-1.44l1.45-5.62a.5.5 0 0 1 .96 0l1.45 5.62a2 2 0 0 0 1.44 1.44l5.62 1.45a.5.5 0 0 1 0 .96l-5.62 1.45a2 2 0 0 0-1.44 1.44l-1.45 5.62a.5.5 0 0 1-.96 0Z"/></svg></div>
+              <div><div class="vf-label">GPT answers instantly</div><div class="vf-sub">Accurate, contextual reply</div></div>
+            </div>
+            <div class="vf-conn"><div class="vf-dot"></div></div>
+            <div class="vf-node result">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
+              <div><div class="vf-label">Resolved &amp; logged</div><div class="vf-sub">Senior staff never interrupted</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL 5 -->
+        <div class="tab-panel" id="t5" role="tabpanel">
+          <div>
+            <div class="tp-eyebrow">Data migration</div>
+            <h3 class="tp-h3">Manual CRM migrations were taking days, failing mid-way, and leaving clients on hold</h3>
+            <p class="tp-desc">Enterprise clients switching from LeadSquared faced a slow, error-prone manual process that blocked their teams for days. Built a <b>cron-based, API-driven pipeline</b> that moves entire accounts overnight — importing 4,000+ accounts, leads, and permission structures automatically and rebuilding each client's sales workflows exactly as they were. Zero errors. Full continuity from day one.</p>
+            <div class="tp-stack"><b>Stack:</b> Node.js · REST APIs (LeadSquared) · cron · MongoDB · Google Apps Script</div>
+          </div>
+          <div class="vflow">
+            <div class="vf-node trigger">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+              <div><div class="vf-label">Migration triggered</div><div class="vf-sub">Cron job fires overnight</div></div>
+            </div>
+            <div class="vf-conn"><div class="vf-dot"></div></div>
+            <div class="vf-node auto">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BFD4FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+              <div><div class="vf-label">Data extracted</div><div class="vf-sub">4,000+ accounts pulled via API</div></div>
+            </div>
+            <div class="vf-conn"><div class="vf-dot"></div></div>
+            <div class="vf-node auto">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BFD4FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg></div>
+              <div><div class="vf-label">Leads &amp; permissions mapped</div><div class="vf-sub">Workflows rebuilt automatically</div></div>
+            </div>
+            <div class="vf-conn"><div class="vf-dot"></div></div>
+            <div class="vf-node auto">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BFD4FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+              <div><div class="vf-label">Validated &amp; logged</div><div class="vf-sub">Error checks at every step</div></div>
+            </div>
+            <div class="vf-conn"><div class="vf-dot"></div></div>
+            <div class="vf-node result">
+              <div class="vf-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+              <div><div class="vf-label">Client live by morning</div><div class="vf-sub">10+ hours saved per migration</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /tab-panels -->
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ RESULTS ============ -->
+<section id="results">
+  <div class="wrap">
+    <div class="eyebrow reveal">Selected Results</div>
+    <h2 class="reveal">Production systems. Measured outcomes.</h2>
+    <p class="section-sub reveal">Automation and AI systems I have designed and shipped in production — each replacing manual work with something faster, safer, and auditable.</p>
+    <div class="case-list">
+      <div class="case reveal">
+        <div class="metric">+10–15%<small>Revenue lift</small></div>
+        <div>
+          <h3>Lead nurture &amp; qualification automation</h3>
+          <p>Leads abandoning a multi-step demo form were silently lost. An automated flow now re-engages them via WhatsApp drip campaigns and an AI call agent — qualifying genuine intent and routing only sales-ready leads to the team.</p>
+          <div class="stack"><b>Stack:</b> CRM APIs · AI call agent · WhatsApp drip · webhooks</div>
+        </div>
+      </div>
+      <div class="case reveal">
+        <div class="metric">+25%<small>Form completions</small></div>
+        <div>
+          <h3>Funnel drop-off analytics (GA4 + GTM)</h3>
+          <p>Instrumented a multi-step demo form to expose per-step drop-off. Identified the single field killing conversions, made it optional, and built retargeting audiences from abandoners — recovering 10% of lost leads.</p>
+          <div class="stack"><b>Stack:</b> GA4 · Google Tag Manager · DataLayer · JavaScript</div>
+        </div>
+      </div>
+      <div class="case reveal">
+        <div class="metric">100%<small>Payout accuracy</small></div>
+        <div>
+          <h3>End-to-end affiliate program automation</h3>
+          <p>Replaced a manual, duplicate-prone affiliate process with a secure system handling sign-ups, lead attribution, and dynamic payment links — sign-ups up ~15%, duplicates eliminated, full audit trail.</p>
+          <div class="stack"><b>Stack:</b> Node.js · payment-link APIs · CRM logic</div>
+        </div>
+      </div>
+      <div class="case reveal">
+        <div class="metric">−25%<small>Resolution time</small></div>
+        <div>
+          <h3>GPT-powered internal support assistant</h3>
+          <p>Designed and shipped a GPT bot that resolves repetitive product and process questions instantly — adopted organization-wide, freeing senior staff from answering the same questions on loop.</p>
+          <div class="stack"><b>Stack:</b> GPT API · Node.js</div>
+        </div>
+      </div>
+      <div class="case reveal">
+        <div class="metric">~50%<small>Fewer manual errors</small></div>
+        <div>
+          <h3>Cross-functional automation &amp; reporting</h3>
+          <p>Primary automation owner across sales, marketing, product, and operations — lead routing, payout flows, follow-ups, and live reporting dashboards that multiple teams rely on daily, saving 10–15 team hours every month.</p>
+          <div class="stack"><b>Stack:</b> n8n · Zapier · Pabbly Connect · Google Apps Script · Node.js</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process" style="background:var(--paper);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)">
+  <div class="wrap">
+    <div class="eyebrow reveal">Engagement Model</div>
+    <h2 class="reveal">From conversation to running system</h2>
+    <div class="steps">
+      <div class="step reveal" style="background:#fff">
+        <div class="n">1</div>
+        <h3>Discover</h3>
+        <p>A free 30-minute call. You walk me through how your team works today; I identify what is automatable, what isn't, and what it could save you.</p>
+      </div>
+      <div class="step reveal" style="background:#fff">
+        <div class="n">2</div>
+        <h3>Design</h3>
+        <p>You receive a clear blueprint: which tools, how data flows, where AI fits, and what "done" looks like — in plain language, with measurable outcomes.</p>
+      </div>
+      <div class="step reveal" style="background:#fff">
+        <div class="n">3</div>
+        <h3>Automate</h3>
+        <p>The system goes live — built with edge cases, retries, and error handling by default. My QA background means automation that keeps working when reality gets messy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow reveal">About</div>
+    <h2 class="reveal">From CAD drawings to AI agent teams</h2>
+    <div class="about-text reveal" style="max-width:780px;margin-top:36px">
+        <p>I began as a <b>mechanical CAD engineer and instructor</b> — designing products and teaching hundreds of students to think in systems. The habit of breaking complex things into precise, repeatable steps never left.</p>
+        <p>It carried me through <b>growth marketing</b>, then into <b>B2B SaaS</b>, where I progressed from Technical Analyst to QA Engineer to <b>Solutions Engineer</b> — owning technical solutions end to end: pre-sales discovery, solution design, build, launch, and support for enterprise teams of 50–100+ users.</p>
+        <div class="pull">Automation only saves time if it doesn't break. So I build systems that don't.</div>
+        <p>The QA chapter shaped how I build today: edge-case thinking, retry logic, and error instrumentation by default. Now I share what I've learned and help founders, marketers, and operations teams find the hours hiding in their workflows.</p>
+        <div class="journey">
+          <div class="j-row"><div class="when">2024 — PRESENT</div><div class="what"><b>Technical Analyst → QA → Solutions Engineer</b><span>B2B SaaS · automation, AI workflows &amp; enterprise solutioning</span></div></div>
+          <div class="j-row"><div class="when">2023 — 2024</div><div class="what"><b>Growth Hacker</b><span>SEO, paid campaigns, funnel optimization</span></div></div>
+          <div class="j-row"><div class="when">2020 — 2023</div><div class="what"><b>CAD Engineer &amp; Instructor</b><span>Product design &amp; training · ~80% student placement</span></div></div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- ============ BOOK ============ -->
+<section id="book" class="cta">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <div class="eyebrow">Free Consultation</div>
+      <h2>Let's find the hours hiding in your workflow</h2>
+      <p>A free, no-pressure 30-minute conversation. Bring your messiest manual process — leave with a clear view of what's automatable and what it would take.</p>
+      <a class="btn btn-primary btn-lg" href="https://calendly.com/mohitkr/1-1" target="_blank" rel="noopener">Book your free 1:1 →</a>
+      <p class="cta-meta">30 minutes · Online · No cost, no obligation</p>
+      <p class="cta-meta" style="margin-top:6px">Prefer to talk now? <a href="tel:+918077742628" style="display:inline-flex;align-items:center;gap:6px;vertical-align:middle;color:var(--blue);font-weight:600;text-decoration:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call me directly</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#top">Mohit Kumar<span>.</span></a>
+        <p style="margin-top:8px;max-width:360px">Solutions Engineer · AI &amp; Automation Consultant<br>Gurugram / NCR, India</p>
+      </div>
+      <ul class="foot-links">
+        <li><a href="https://www.linkedin.com/in/mohitwa" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V9h4v1.5"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></li>
+        <li><a href="mailto:mohitwaxd@gmail.com"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Email</a></li>
+        <li><a href="tel:+918077742628"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a></li>
+        <li><a href="https://calendly.com/mohitkr/1-1" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>Book a call</a></li>
+      </ul>
+    </div>
+    <p class="disclaimer">Â© 2026 Mohit Kumar. All views, content, and consultations on this site are personal and independent of my employer.</p>
+  </div>
+</footer>
+
+<!-- ============ BOOKING MODAL REMOVED — booking now opens Calendly in a new tab ============ -->
+
+<script>
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+function countUp(el){
+  const target=+el.dataset.count, suffix=el.dataset.suffix||'', prefix=el.dataset.prefix||'';
+  if(reduce){ el.textContent=prefix+target.toLocaleString()+suffix; return; }
+  const dur=1300, start=performance.now();
+  function tick(now){
+    const p=Math.min((now-start)/dur,1), eased=1-Math.pow(1-p,3);
+    el.textContent=prefix+Math.round(target*eased).toLocaleString()+suffix;
+    if(p<1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const statIO=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ countUp(e.target); statIO.unobserve(e.target);} });
+},{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>statIO.observe(el));
+
+const navLinks = document.querySelector('.nav-links');
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+// Tabs
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const target=btn.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false');});
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected','true');
+    document.getElementById(target).classList.add('active');
+  });
+});
+
+// Close mobile menu on outside click
+document.addEventListener('click', e => {
+  if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !document.querySelector('.menu-toggle').contains(e.target))
+    navLinks.classList.remove('open');
+});
+
+// Scroll-spy: highlight active nav link
+const sections = ['top','services','automation','results','process','about','book'];
+const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+function setActive(){
+  let current = 'top';
+  sections.forEach(id=>{
+    const el = document.getElementById(id);
+    if(el && window.scrollY >= el.offsetTop - 90) current = id;
+  });
+  navAnchors.forEach(a=>{
+    const active = a.getAttribute('href') === '#'+current;
+    a.style.color = active ? 'var(--navy)' : '';
+    a.style.fontWeight = active ? '600' : '';
+  });
+}
+window.addEventListener('scroll', setActive, {passive:true});
+setActive();
+</script>
+</body>
+</html>
